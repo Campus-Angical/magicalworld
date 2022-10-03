@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:magicalworld/domain/servico.dart';
@@ -29,10 +28,10 @@ class _HomePageState extends State<HomePage> {
           children: buildCardItens([
             Servico(
                 'https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://forfunfestas.com.br/wp-content/uploads/2017/12/Homem-Aranha-1-site.jpg',
-                'Homem Aranha',
-                300.00),
-                Servico('https://i.pinimg.com/736x/90/2d/d9/902dd929bcd166f05755b567f0b92cd0.jpg', 'Pequena Sereia', 200),
+                'Homem Aranha',300.00, 'Decoração do Home aranha ',60),
+                Servico('https://i.pinimg.com/736x/90/2d/d9/902dd929bcd166f05755b567f0b92cd0.jpg', 'Pequena Sereia', 200,'Decoração da Pequena Sereia',70),
           ])),
+          
           
     );
   }
@@ -54,9 +53,10 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                   
-                    Text('${s.preco}', style: TextStyle(fontSize: 15, color: Colors.blue)),
+                    Text('${s.preco}',style: TextStyle(fontSize: 15, color: Colors.blue))
                   ],
                 ),
               )
