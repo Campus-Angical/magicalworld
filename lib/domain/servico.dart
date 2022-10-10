@@ -1,4 +1,6 @@
 class Servico {
+  
+  int id;
   String imageUrl;
   String nome;
   double preco;
@@ -6,5 +8,5 @@ class Servico {
   int like;
  
 
-  Servico(this.imageUrl, this.nome, this.preco, this.descricao, this.like);
+  Servico(this.id,this.imageUrl, this.nome, this.preco, this.descricao, this.like);
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:magicalworld/presentation/pages/home_page.dart';
 
-
 void main() {
   runApp(MaterialApp(home: MyApp()));
 }
