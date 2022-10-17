@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "686999684016",
+    "project_id": "magical-world-94183",
+    "storage_bucket": "magical-world-94183.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686999684016:android:5277f2a9b319f295174c75",
+        "android_client_info": {
+          "package_name": "br.edu.ifpi.magicalworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686999684016-9m7dho6iaq9g7suge9bs0d2mgqcmr5ib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZqayI-VUfWnuBeMEleKurz0kLU7gXUcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686999684016-9m7dho6iaq9g7suge9bs0d2mgqcmr5ib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

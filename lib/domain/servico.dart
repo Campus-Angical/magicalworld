@@ -1,6 +1,6 @@
 class Servico {
   
-  int id;
+  String id;
   String imageUrl;
   String nome;
   double preco;

@@ -1,7 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:magicalworld/presentation/pages/home_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MaterialApp(home: MyApp()));
 }
 
@@ -31,21 +34,21 @@ class _MyAppState extends State<MyApp> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_filled),
-              label: 'home',
-              backgroundColor: Colors.pink,
+              label: 'Home',
+              backgroundColor: Color.fromRGBO(242, 145, 208, 1)
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined),
+                icon: Icon(Icons.perm_identity_outlined),
                 label: 'Perfil',
-                backgroundColor: Colors.pink),
+                backgroundColor: Color.fromRGBO(242, 145, 208, 1)),
             BottomNavigationBarItem(
                 icon: Icon(Icons.add),
                 label: 'Cadastrar',
-                backgroundColor: Colors.pink),
+                backgroundColor: Color.fromRGBO(242, 145, 208, 1)),
             BottomNavigationBarItem(
-                icon: Icon(Icons.bookmark_outline_sharp),
+                icon: Icon(Icons.bookmark_outlined),
                 label: 'Favoritos',
-                backgroundColor: Colors.pink)
+                backgroundColor: Color.fromRGBO(242, 145, 208, 1))
           ],
           onTap: (index) {
             _curr = index;

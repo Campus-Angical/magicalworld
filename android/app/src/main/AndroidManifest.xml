@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.magicalworld">
+    package="br.edu.ifpi.magicalworld">
    <application
         android:label="magicalworld"
         android:name="${applicationName}"
