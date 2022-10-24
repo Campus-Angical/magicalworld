@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:magicalworld/presentation/pages/home_page.dart';
+import 'package:magicalworld/presentation/pages/servico/login.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   PageController controller = PageController();
   List<Widget> _list = [
-    HomePage(),
+    LoginPage(),
     Container(
       color: Colors.amber,
     )

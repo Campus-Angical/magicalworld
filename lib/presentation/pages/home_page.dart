@@ -70,11 +70,14 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Text('${s.preco}',
-                        style: TextStyle(fontSize: 15, color: Colors.blue))
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 50),
+                  child: Row(
+                    children: [
+                      Text('${s.preco}',
+                          style: TextStyle(fontSize: 15, color: Colors.blue))
+                    ],
+                  ),
                 ),
               )
             ],
