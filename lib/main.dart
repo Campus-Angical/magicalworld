@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:magicalworld/presentation/pages/home_page.dart';
 import 'package:magicalworld/presentation/pages/servico/login.dart';
+import 'package:magicalworld/presentation/pages/servico/servico_form.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +20,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   PageController controller = PageController();
   List<Widget> _list = [
-    LoginPage(),
+    HomePage(),
     Container(
       color: Colors.amber,
-    )
+    ),
+    ServicoForm()
   ];
   int _curr = 0;
 

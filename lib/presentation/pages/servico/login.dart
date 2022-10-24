@@ -66,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5)),
                     ),
+                    
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
