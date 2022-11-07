@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Color.fromRGBO(242, 145, 208, 1),
           title: Center(child: Text('Magical World')),
         ),
-        drawer: Drawer(),
         body: Column(
           children: [
             FutureBuilder<dartz.Either<Failure, List<Servico>>>(
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisCount: 2,
                                     crossAxisSpacing: 8,
                                     mainAxisSpacing: 8,
-                                    childAspectRatio: 0.9),
+                                    childAspectRatio: 0.7),
                             children: buildCardItens(servicos)),
                       );
                     });
@@ -59,28 +58,31 @@ class _HomePageState extends State<HomePage> {
           Navigator.push(context,
               MaterialPageRoute(builder: ((context) => ServicoDetail(s))));
         }),
-        child: Card(
-          child: Column(
-            children: [
-              Image.network(s.imageUrl,
-                  width: 400, height: 100, fit: BoxFit.cover),
-              Text(
-                s.nome,
-                style: TextStyle(fontSize: 19),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: Row(
-                    children: [
-                      Text('${s.preco}',
-                          style: TextStyle(fontSize: 15, color: Colors.blue))
-                    ],
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 15),
+          child: Card(
+            child: Column(
+              children: [
+                Image.network(s.imageUrl,
+                    width: 400, height: 145, fit: BoxFit.cover),
+                Text(
+                  s.nome,
+                  style: TextStyle(fontSize: 19),
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Row(
+                      children: [
+                        Text('${s.preco}',
+                            style: TextStyle(fontSize: 15, color: Colors.blue))
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ));

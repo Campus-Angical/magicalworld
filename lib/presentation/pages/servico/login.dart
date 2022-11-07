@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:magicalworld/presentation/pages/home_page.dart';
+import 'package:magicalworld/presentation/pages/servico/servico_cadrastro_user.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,6 +11,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  bool _showPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: false,
                       decoration: InputDecoration(
                         label: Icon(Icons.email),
+                        hintText: 'Informe seu e-mail',
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromARGB(255, 247, 122, 236),
@@ -55,10 +60,23 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   TextField(
-                    keyboardType: TextInputType.text,
-                    obscureText: true,
+                    keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
                       label: Icon(Icons.lock),
+                      hintText: 'Informe sua senha',
+                      suffixIcon: GestureDetector(
+                        child: Icon(
+                          _showPassword == false
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Color.fromARGB(255, 255, 105, 255),
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _showPassword = !_showPassword;
+                          });
+                        },
+                      ),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 250, 106, 238),
@@ -66,13 +84,21 @@ class _LoginPageState extends State<LoginPage> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5)),
                     ),
-                    
+                    obscureText: _showPassword == false ? true : false,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: [Text('Cadastre-se')],
+                      children: [
+                        GestureDetector(
+                          child: Text('Cadastre-se'),
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => CadastrouserPage()));
+                          },
+                        )
+                      ],
                     ),
                   ),
                   SizedBox(
@@ -89,7 +115,10 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Processing Data'), backgroundColor: Colors.green,),
+                            const SnackBar(
+                              content: Text('Processing Data'),
+                              backgroundColor: Colors.green,
+                            ),
                           );
                         }
                       },
@@ -97,27 +126,6 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(color: Colors.black, fontSize: 25)),
                     ),
                   ),
-                  SizedBox(
-                    height: 90,
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        'Conecta-se com',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                      SizedBox(height: 40),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.face_rounded),
-                          Icon(Icons.face_rounded),
-                          Icon(Icons.face_rounded),
-                        ],
-                      )
-                    ],
-                  )
                 ],
               ),
             ),
