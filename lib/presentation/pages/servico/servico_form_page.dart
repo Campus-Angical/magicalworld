@@ -38,7 +38,6 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastro'),
         backgroundColor: Color.fromRGBO(242, 145, 208, 1),
       ),
       body: Padding(
@@ -48,13 +47,36 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(height: 50),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Cadastre seu serviço',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+                Container(
+                  width: 200,
+                  child: Divider(
+                    thickness: 3,
+                    color: Color.fromRGBO(242, 145, 208, 1),
+                  ),
+                ),
+                SizedBox(height: 50),
                 TextFormField(
                   controller: imageCtrl,
                   decoration: const InputDecoration(
-                      labelText: 'Link',
-                      hintText: 'Endereço da imagem',
-                      border: OutlineInputBorder(),
-                      suffixIcon: Icon(Icons.link)),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 247, 122, 236), width: 2),
+                    ),
+                    hintText: 'Endereço da imagem',
+                    prefixIcon: Icon(Icons.link, color: Colors.black),
+                    border: OutlineInputBorder(),
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Campo obrigatório!';
@@ -65,10 +87,17 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
                 TextFormField(
                   controller: nomeCtrl,
                   decoration: const InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color.fromARGB(255, 247, 122, 236),
+                            width: 2),
+                      ),
                       hintText: 'Informe seu nome:',
                       border: OutlineInputBorder(),
-                      labelText: 'Nome',
-                      suffixIcon: Icon(Icons.person)),
+                      prefixIcon: Icon(
+                        Icons.person,
+                        color: Colors.black,
+                      )),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Campo obrigatório!';
@@ -80,10 +109,17 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
                   keyboardType: TextInputType.number,
                   controller: precoCtrl,
                   decoration: const InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color.fromARGB(255, 247, 122, 236),
+                            width: 2),
+                      ),
                       hintText: 'Informe o valor',
                       border: OutlineInputBorder(),
-                      labelText: 'Valor',
-                      suffixIcon: Icon(Icons.attach_money_outlined)),
+                      prefixIcon: Icon(
+                        Icons.attach_money_outlined,
+                        color: Colors.black,
+                      )),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Campo obrigatório!';
@@ -95,10 +131,17 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
                   maxLines: null,
                   controller: descricaoCtrl,
                   decoration: const InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Color.fromARGB(255, 247, 122, 236),
+                            width: 2),
+                      ),
                       hintText: 'Informe a descrição do serviço:',
                       border: OutlineInputBorder(),
-                      labelText: 'Descrição',
-                      suffixIcon: Icon(Icons.description)),
+                      prefixIcon: Icon(
+                        Icons.description,
+                        color: Colors.black,
+                      )),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Campo obrigatório!';
@@ -107,8 +150,8 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
                 ),
                 SizedBox(height: 40),
                 Container(
-                  height: 56,
-                  width: 216,
+                  height: 60,
+                  width: 200,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       color: Color.fromRGBO(242, 145, 208, 1)),
@@ -135,7 +178,9 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
                       child: Text(
                         'Cadastrar',
                         style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
                       )),
                 ),
               ],

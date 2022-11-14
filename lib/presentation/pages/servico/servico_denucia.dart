@@ -14,34 +14,50 @@ class _DenuciaPageState extends State<DenuciaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(242, 145, 208, 1),
+      ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(top: 50),
                 child: Text(
                   'Denúncia',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
-              )
+              ),
             ],
+          ),
+          Container(
+            width: 90,
+            child: Divider(
+              thickness: 3,
+              color: Color.fromRGBO(242, 145, 208, 1),
+            ),
+          ),
+          SizedBox(
+            height: 40,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: TextFormField(
               keyboardType: TextInputType.text,
               maxLines: null,
-              maxLength: 400,
+              maxLength: 1000,
               decoration: InputDecoration(
                 hintText: 'Informe sua Reclamação',
-                labelText: 'Denúncia...',
-                suffixIcon: Icon(Icons.sms_rounded),
+                labelText: 'Denúnciar',
+                prefixIcon: Icon(
+                  Icons.sms_rounded,
+                  color: Colors.black,
+                ),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Color.fromARGB(255, 247, 122, 236), width: 2)),
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 247, 122, 236), width: 2),
+                ),
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
               ),
@@ -55,16 +71,18 @@ class _DenuciaPageState extends State<DenuciaPage> {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50),
                   child: Container(
-                    width: 216,
-                    height: 56,
+                    width: 200,
+                    height: 60,
                     decoration: BoxDecoration(
                         color: Color.fromRGBO(242, 145, 208, 1),
                         borderRadius: BorderRadius.circular(5)),
                     child: Center(
-                        child: Text(
-                      'Enviar Denúncia',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                      child: Text(
+                        'Enviar Denúncia',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ),
                   ),
                 ),
               )

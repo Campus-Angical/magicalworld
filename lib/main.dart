@@ -22,6 +22,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   PageController controller = PageController();
+
   List<Widget> _list = [
     HomePage(),
     Container(

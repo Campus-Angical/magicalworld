@@ -1,9 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CadastrouserPage extends StatefulWidget {
   const CadastrouserPage({Key? key}) : super(key: key);
@@ -22,93 +19,146 @@ class _CadastrouserPageState extends State<CadastrouserPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Text(
-                  'Login',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-              ),
-            ),
-            Form(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: TextField(
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                        labelText: 'Nome',
-                        hintText: 'Informe seu nome',
-                        suffixIcon: Icon(Icons.person)),
+            Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Cadastro',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                ),
+                ],
               ),
             ),
-            Form(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: TextField(
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                        labelText: 'E-mail',
-                        hintText: 'Informe seu email',
-                        suffixIcon: Icon(Icons.email)),
+            Container(
+              width: 90,
+              child: Divider(
+                color: Color.fromRGBO(242, 145, 208, 1),
+                thickness: 1,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                obscureText: false,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: Colors.black,
                   ),
-                ),
-              ),
-            ),
-            Form(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: TextField(
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
-                        labelText: 'Senha',
-                        hintText: 'Informe sua senha',
-                        suffixIcon: Icon(Icons.lock_outlined)),
-                  ),
-                ),
-              ),
-            ),
-            Form(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: TextField(
-                    obscureText: true,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                        labelText: 'senha novamento',
-                        hintText: 'Informe sua senha',
-                        suffixIcon: Icon(Icons.lock_outlined)),
-                  ),
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Padding(
-                padding: const EdgeInsets.only(top: 100),
-                child: Container(
-                  width: 200,
-                  height: 60,
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(242, 145, 208, 1),
+                  hintText: 'Informe seu nome',
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 247, 122, 236), width: 2)),
+                  border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5)),
-                  child: Center(
-                      child: Text(
-                    'Logar',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  )),
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo obrigatório';
+                  }
+                },
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                obscureText: false,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Colors.black,
+                  ),
+                  hintText: 'Informe seu e-mail',
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 247, 122, 236), width: 2)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo obrigatório';
+                  }
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.black,
+                  ),
+                  hintText: 'Digíte sua senha',
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 247, 122, 236), width: 2)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo obrigatório';
+                  }
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.black,
+                  ),
+                  hintText: 'Confirme sua senha',
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 247, 122, 236), width: 2)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo obrigatório';
+                  }
+                },
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Container(
+                      width: 200,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(242, 145, 208, 1),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                          child: Text(
+                        'Cadastrar',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      )),
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),

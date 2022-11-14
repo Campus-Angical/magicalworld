@@ -32,14 +32,17 @@ class _HomePageState extends State<HomePage> {
                       return Text('Erro: ${failure.message}');
                     }, (servicos) {
                       return Expanded(
-                        child: GridView(
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    crossAxisSpacing: 8,
-                                    mainAxisSpacing: 8,
-                                    childAspectRatio: 0.7),
-                            children: buildCardItens(servicos)),
+                        child: AspectRatio(
+                          aspectRatio: 1,
+                          child: GridView(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      crossAxisSpacing: 8,
+                                      mainAxisSpacing: 8,
+                                      childAspectRatio: 0.7),
+                              children: buildCardItens(servicos)),
+                        ),
                       );
                     });
                   }

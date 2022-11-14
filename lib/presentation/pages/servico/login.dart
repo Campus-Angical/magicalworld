@@ -43,7 +43,10 @@ class _LoginPageState extends State<LoginPage> {
                       keyboardType: TextInputType.emailAddress,
                       obscureText: false,
                       decoration: InputDecoration(
-                        label: Icon(Icons.email),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.black,
+                        ),
                         hintText: 'Informe seu e-mail',
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -62,7 +65,10 @@ class _LoginPageState extends State<LoginPage> {
                   TextField(
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                      label: Icon(Icons.lock),
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        color: Colors.black,
+                      ),
                       hintText: 'Informe sua senha',
                       suffixIcon: GestureDetector(
                         child: Icon(
@@ -106,6 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Container(
                     width: 200,
+                    height: 60,
                     child: RawMaterialButton(
                       fillColor: Color.fromARGB(255, 238, 149, 247),
                       elevation: 0.0,
@@ -123,7 +130,10 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       },
                       child: Text('Entrar',
-                          style: TextStyle(color: Colors.black, fontSize: 25)),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],

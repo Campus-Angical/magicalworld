@@ -79,12 +79,13 @@ class _ServicoDetailState extends State<ServicoDetail> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Color.fromRGBO(242, 145, 208, 1)),
-                    width: 350,
-                    height: 50,
+                    width: 200,
+                    height: 60,
                     child: Center(
                         child: Text(
                       'Adquerir Serviço',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     )),
                   ),
                 ),
@@ -103,10 +104,14 @@ class _ServicoDetailState extends State<ServicoDetail> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 5),
-              child: Divider(
-                height: 2,
-                thickness: 0.2,
-                color: Color.fromRGBO(242, 145, 208, 1),
+              child: Center(
+                child: Container(
+                  width: 200,
+                  child: Divider(
+                    thickness: 2,
+                    color: Color.fromRGBO(242, 145, 208, 1),
+                  ),
+                ),
               ),
             ),
             Padding(
