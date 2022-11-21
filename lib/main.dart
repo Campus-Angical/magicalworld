@@ -5,6 +5,7 @@ import 'package:magicalworld/presentation/pages/servico/login.dart';
 import 'package:magicalworld/presentation/pages/servico/servico_cadrastro_user.dart';
 import 'package:magicalworld/presentation/pages/servico/servico_denucia.dart';
 import 'package:magicalworld/presentation/pages/servico/servico_form_page.dart';
+import 'package:magicalworld/presentation/pages/servico/servico_list_page.dart';
 import 'package:magicalworld/presentation/pages/servico/servico_pagamento.dart';
 
 Future<void> main() async {
@@ -28,13 +29,8 @@ class _MyAppState extends State<MyApp> {
     Container(
       color: Colors.amber,
     ),
-    ServicoFormPage(),
-    Container(
-      color: Colors.red,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
+    ServicoListPage(),
+    LoginPage(),
   ];
   int _curr = 0;
 
@@ -54,8 +50,8 @@ class _MyAppState extends State<MyApp> {
                 label: 'Perfil',
                 backgroundColor: Color.fromRGBO(242, 145, 208, 1)),
             BottomNavigationBarItem(
-                icon: Icon(Icons.add),
-                label: 'Cadastrar',
+                icon: Icon(Icons.bookmark_outlined),
+                label: 'Favoritos',
                 backgroundColor: Color.fromRGBO(242, 145, 208, 1)),
             BottomNavigationBarItem(
                 icon: Icon(Icons.bookmark_outlined),

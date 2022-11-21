@@ -1,8 +1,6 @@
-import 'package:magicalworld/domain/servico.dart';
-
 class Usuario {
   String nome;
-  List<Servico> curtidos = [];
+  List<String> favoritos = [];
 
   Usuario(this.nome);
 }

@@ -1,17 +1,17 @@
 import 'package:magicalworld/domain/servico.dart';
 import 'package:magicalworld/domain/usuario.dart';
+import 'package:magicalworld/presentation/services/auth_service.dart';
 
 class ServicoDetailCtrl {
-  Usuario usuario = Usuario('Luis');
 
   void like(Servico servico) {
     servico.like++;
-    usuario.curtidos.add(servico);
+    AuthService.usuario.favoritos.add(servico.id);
   }
 
   bool isLiked(Servico servico) {
-    for (Servico s in usuario.curtidos) {
-      if (servico.id == s.id) {
+    for (String s in AuthService.usuario.favoritos) {
+      if (servico.id == s) {
         return true;
       }
     }

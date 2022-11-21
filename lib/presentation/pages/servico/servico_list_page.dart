@@ -6,37 +6,27 @@ import 'package:magicalworld/presentation/controllers/servico/servico_list_ctrl.
 import 'package:magicalworld/presentation/pages/servico/servico_detail.dart';
 import 'package:magicalworld/presentation/pages/servico/servico_form_page.dart';
 
-class HomePage extends StatefulWidget {
+class ServicoListPage extends StatefulWidget {
   final ServicoListCtrl controller = ServicoListCtrl();
-  HomePage({Key? key}) : super(key: key);
+  ServicoListPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ServicoListPage> createState() => _ServicoListPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ServicoListPageState extends State<ServicoListPage> {
   ServicoListCtrl get controller => widget.controller;
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(242, 145, 208, 1),
-        title: GestureDetector(
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(
-                builder: (context) => ServicoFormPage(),
-              ))
-                  .then((value) {
-                setState(() {});
-              });
-            },
-            child: Icon(Icons.add)),
+        title: Text('Favoritos'),
       ),
       body: Column(
         children: [
           FutureBuilder<dartz.Either<Failure, List<Servico>>>(
-            future: controller.search(),
+            future: controller.favoritos(),
             builder: ((context, snapshot) {
               if (snapshot.hasData) {
                 return snapshot.data!.fold(

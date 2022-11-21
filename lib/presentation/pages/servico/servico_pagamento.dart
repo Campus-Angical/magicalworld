@@ -68,31 +68,6 @@ class _PagamentoPageState extends State<PagamentoPage> {
                 )
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
-              child: Divider(
-                height: 2,
-                thickness: 0.2,
-                color: Color.fromRGBO(242, 145, 208, 1),
-              ),
-            ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Icon(
-                      Icons.credit_card,
-                    ),
-                    Icon(
-                      Icons.list_alt_outlined,
-                    ),
-                    Icon(
-                      Icons.pix,
-                    ),
-                  ],
-                )
-              ],
-            )
           ],
         ),
       ),

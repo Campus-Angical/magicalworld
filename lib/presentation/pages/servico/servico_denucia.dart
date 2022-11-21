@@ -49,7 +49,6 @@ class _DenuciaPageState extends State<DenuciaPage> {
               maxLength: 1000,
               decoration: InputDecoration(
                 hintText: 'Informe sua Reclamação',
-                labelText: 'Denúnciar',
                 prefixIcon: Icon(
                   Icons.sms_rounded,
                   color: Colors.black,

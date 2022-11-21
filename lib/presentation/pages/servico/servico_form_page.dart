@@ -92,7 +92,7 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
                             color: Color.fromARGB(255, 247, 122, 236),
                             width: 2),
                       ),
-                      hintText: 'Informe seu nome:',
+                      hintText: 'Informe seu nome',
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(
                         Icons.person,
@@ -169,8 +169,9 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
                             ));
                           }, (r) {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text('Sucesso!'),
+                              content: Text('Seu serviço foi cadastrado com sucesso',),
                             ));
+
                             Navigator.pop(context);
                           });
                         }
