@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class PagamentoPage extends StatefulWidget {
+class PagamentoPage extends StatelessWidget {
   const PagamentoPage({Key? key}) : super(key: key);
 
-  @override
-  State<PagamentoPage> createState() => _PagamentoPageState();
-}
-
-class _PagamentoPageState extends State<PagamentoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,39 +12,67 @@ class _PagamentoPageState extends State<PagamentoPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 90),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 80),
+                  child: Text(
                     'Localização',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                ],
-              ),
+                )
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
+            Container(
+              width: 110,
               child: Divider(
-                height: 2,
-                thickness: 0.2,
+                thickness: 3,
                 color: Color.fromRGBO(242, 145, 208, 1),
               ),
             ),
-            Form(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
-                child: TextField(
-                  decoration: InputDecoration(hintText: 'Informe sua Cidade'),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.text,
+                maxLines: null,
+                maxLength: 200,
+                decoration: InputDecoration(
+                  hintText: 'Informe sua cidade',
+                  prefixIcon: Icon(
+                    Icons.home,
+                    color: Colors.black,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Color.fromARGB(255, 247, 122, 236), width: 2),
+                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5)),
                 ),
               ),
             ),
-            Form(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
-                child: TextField(
-                  decoration: InputDecoration(hintText: 'Informe seu Endereço'),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.text,
+                maxLines: null,
+                maxLength: 300,
+                decoration: InputDecoration(
+                  hintText: 'Informe seu endereço',
+                  prefixIcon: Icon(
+                    Icons.location_on,
+                    color: Colors.black,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Color.fromARGB(255, 247, 122, 236), width: 2),
+                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5)),
                 ),
               ),
             ),
@@ -60,13 +80,23 @@ class _PagamentoPageState extends State<PagamentoPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 90),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Text(
-                    'Forma de pagamento',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    'Forma de Pagamento',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                 )
               ],
+            ),
+            Container(
+              width: 195,
+              child: Divider(
+                thickness: 3,
+                color: Color.fromRGBO(242, 145, 208, 1),
+              ),
+            ),
+            SizedBox(
+              height: 30,
             ),
           ],
         ),
