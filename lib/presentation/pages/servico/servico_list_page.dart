@@ -21,7 +21,13 @@ class _ServicoListPageState extends State<ServicoListPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(242, 145, 208, 1),
-        title: Text('Favoritos'),
+        actions: [
+               Row(
+                 children: [
+                    CircleAvatar(child: Image.asset('')),
+                 ],
+               )
+            ],
       ),
       body: Column(
         children: [
@@ -34,7 +40,20 @@ class _ServicoListPageState extends State<ServicoListPage> {
                     return Text('Erro: ${failure.message}');
                   },
                   (servicos) {
-                    return Expanded(
+                    if(servicos.isEmpty){
+                      return 
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 140),
+                              child: Image.asset('assets/img/zyro-image.png', height: 400, width: 400,),
+                            ),
+                          ],
+                        );
+                      
+                    }else{
+                       return Expanded(
                       child: AspectRatio(
                         aspectRatio: 1,
                         child: GridView(
@@ -47,6 +66,9 @@ class _ServicoListPageState extends State<ServicoListPage> {
                             children: buildCardItens(servicos)),
                       ),
                     );
+
+                    }
+                   
                   },
                 );
               }

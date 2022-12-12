@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:magicalworld/firebase_options.dart';
@@ -15,6 +16,35 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MaterialApp(home: MyApp()));
+  
+
+  FirebaseFirestore.instance.collection('servicos').doc('uGC5XeD7EqMDFcC1kU4X').delete();
+
+  /*FirebaseFirestore.instance.collection('servicos').doc('PoE7jmba6YStLz84pq2C').update(
+  {
+    'preco':468
+  }
+ );*/
+
+ 
+/*var collection = FirebaseFirestore.instance.collection('servicos');
+  var result = await collection.get();
+ 
+  for (var doc in result.docs) {
+    print(doc['preco']);
+  }*/
+
+  /*var collection = FirebaseFirestore.instance.collection('servicos');
+  final nomeQuery = await collection.where('nome', isEqualTo: 'Bob Esponja').get();
+ 
+  for (var doc in nomeQuery.docs) {
+    print(doc.reference.id);
+    print(doc['nome']);
+    print(doc['descricao']);
+  }*/
+
+
+
 }
 
 class MyApp extends StatefulWidget {
@@ -33,8 +63,8 @@ class _MyAppState extends State<MyApp> {
     Container(
       color: Colors.amber,
     ),
-    ServicoListPage(),
-    LoginPage(),
+    ServicoListPage()
+  
   ];
   int _curr = 0;
 
@@ -43,24 +73,20 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       body: _list[_curr],
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _curr,
+        backgroundColor: Color.fromRGBO(242, 145, 208, 1),
+        currentIndex: _curr,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled),
+                icon: Icon(Icons.home_filled, color: Colors.white,),
                 label: 'Home',
-                backgroundColor: Color.fromRGBO(242, 145, 208, 1)),
+                ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.perm_identity_outlined),
-                label: 'Perfil',
-                backgroundColor: Color.fromRGBO(242, 145, 208, 1)),
+                icon: Icon(Icons.perm_identity_outlined, color: Colors.white,),
+                label: 'Perfil'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.bookmark_outlined),
-                label: 'Favoritos',
-                backgroundColor: Color.fromRGBO(242, 145, 208, 1)),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.bookmark_outlined),
-                label: 'Favoritos',
-                backgroundColor: Color.fromRGBO(242, 145, 208, 1))
+                icon: Icon(Icons.bookmark_outlined, color: Colors.white,),
+                label: 'Favoritos'),
+           
           ],
           onTap: (index) {
             _curr = index;

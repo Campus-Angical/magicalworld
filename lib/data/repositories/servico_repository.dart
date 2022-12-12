@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz_streaming.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:magicalworld/domain/failures/failures.dart';
 import 'package:magicalworld/domain/servico.dart';
 import 'package:magicalworld/domain/usuario.dart';
@@ -42,7 +44,13 @@ class ServicoRepository {
       return left<Failure, String>(Failure('Erro ao buscar no BD'));
     });
   }
-Future<Either<Failure, List<Servico>>> favoritos(Usuario usuario) {
+
+  
+Future<Either<Failure, List<Servico>>> favoritos(Usuario usuario) async {
+    if (usuario.favoritos.isEmpty) {
+      return right([]);
+    }
+
     return FirebaseFirestore.instance
         .collection('servicos')
         .where(FieldPath.documentId, whereIn: usuario.favoritos)

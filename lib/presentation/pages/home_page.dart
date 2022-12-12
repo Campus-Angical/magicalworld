@@ -32,6 +32,13 @@ class _HomePageState extends State<HomePage> {
               });
             },
             child: Icon(Icons.add)),
+            actions: [
+               Row(
+                 children: [
+                    CircleAvatar(child: Image.asset('')),
+                 ],
+               )
+            ],
       ),
       body: Column(
         children: [

@@ -8,6 +8,13 @@ class PagamentoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(242, 145, 208, 1),
+        actions: [
+               Row(
+                 children: [
+                    CircleAvatar(child: Image.asset('')),
+                 ],
+               )
+            ],
       ),
       body: SingleChildScrollView(
         child: Column(

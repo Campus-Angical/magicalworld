@@ -39,6 +39,13 @@ class _ServicoFormPageState extends State<ServicoFormPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(242, 145, 208, 1),
+        actions: [
+               Row(
+                 children: [
+                    CircleAvatar(child: Image.asset('')),
+                 ],
+               )
+            ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),

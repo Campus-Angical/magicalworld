@@ -24,6 +24,13 @@ class _ServicoDetailState extends State<ServicoDetail> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(242, 145, 208, 1),
+        actions: [
+               Row(
+                 children: [
+                    CircleAvatar(child: Image.asset('')),
+                 ],
+               )
+            ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -52,7 +59,7 @@ class _ServicoDetailState extends State<ServicoDetail> {
                         padding: const EdgeInsets.only(left: 280),
                         child: GestureDetector(
                           child: Row(
-                            children: [Icon(Icons.device_unknown_rounded)],
+                            children: [Icon(Icons.perm_device_info_rounded)],
                           ),
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
